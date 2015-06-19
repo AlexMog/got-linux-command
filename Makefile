@@ -10,7 +10,9 @@ PKGNAME=got.deb
 
 SRCDIR=	src/
 
-MAN=	man/got.1
+MANNAME=got.1
+
+MAN=	man/$(MANNAME)
 
 SRC=	$(SRCDIR)main.c \
 	$(SRCDIR)rand_utils.c
@@ -39,7 +41,7 @@ fclean:	clean
 	$(RM) $(NAME)
 	$(RM) $(PKGNAME)
 	$(RM) $(PKGDIR)$(PREFIX)/games/$(BINNAME)
-	$(RM) $(PKGDIR)$(PREFIX)/man/man1/$(MAN)
+	$(RM) $(PKGDIR)$(PREFIX)/man/man1/$(MANNAME)
 
 install:all
 	install -m 755 $(NAME) $(PREFIX)/games
