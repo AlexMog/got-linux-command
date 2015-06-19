@@ -1,6 +1,12 @@
-NAME=	bin/got
+BINNAME=got
+
+NAME=	bin/$(BINNAME)
 
 PREFIX=	/usr/local
+
+PKGDIR= packaging/
+
+PKGNAME=got.deb
 
 SRCDIR=	src/
 
@@ -19,6 +25,8 @@ CFLAGS=	-W -Wall -Wextra -pedantic -Iinclude
 
 LDFLAGS=-o $(NAME)
 
+CP=	cp
+
 $(NAME):$(OBJ)
 	$(CC) $(OBJ) $(LDFLAGS)
 
@@ -29,9 +37,18 @@ clean:
 
 fclean:	clean
 	$(RM) $(NAME)
+	$(RM) $(PKGNAME)
+	$(RM) $(PKGDIR)$(PREFIX)/games/$(BINNAME)
+	$(RM) $(PKGDIR)$(PREFIX)/man/man1/$(MAN)
 
 install:all
 	install -m 755 $(NAME) $(PREFIX)/games
 	install -m 644 $(MAN) $(PREFIX)/man/man1
+
+package:all
+	$(CP) $(NAME) $(PKGDIR)$(PREFIX)/games/
+	$(CP) $(MAN) $(PKGDIR)$(PREFIX)/man/man1/
+	dpkg-deb --build packaging
+	mv packaging.deb $(PKGNAME)
 
 .PHONY: clean fclean all install

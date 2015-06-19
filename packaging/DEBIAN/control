@@ -1,0 +1,8 @@
+Package: got
+Version: 0.0.3
+Section: base
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Alexandre Moghrabi <alexandre.moghrabi@epitech.eu>
+Description: Display quotes of Game of Thrones
