@@ -31,7 +31,7 @@ fclean:	clean
 	$(RM) $(NAME)
 
 install:all
-	install -m 755 $(NAME) $(PREFIX)/bin
+	install -m 755 $(NAME) $(PREFIX)/games
 	install -m 644 $(MAN) $(PREFIX)/man/man1
 
 .PHONY: clean fclean all install
