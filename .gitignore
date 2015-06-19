@@ -1,3 +1,7 @@
+# Tmp files
+*~
+#*
+
 # Object files
 *.o
 *.ko

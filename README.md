@@ -1,2 +1,2 @@
 # got-linux-command
-A GameOfThrones Linux shell command.
+A GameOfThrones quotes Linux shell command.
