@@ -75,7 +75,8 @@ t_quote got_quotes[] = {
   {"Tyrion Lannister", "It's only wine."},
   {"Tyrion Lannister", "You lost a hand, not a stomach."},
   {"Tyrion Lannister", "I didn't know your brother. He seemed like a good man, but I didn't know him. Your mother on the other hand, I admired her. She wanted to have me executed, but I admired her."},
-  {"Tywin", "A one handed man with no family needs all the help he can get."}
+  {"Tywin", "A one handed man with no family needs all the help he can get."},
+  {"Hodor", "Hodor!"}
 };
 
 int get_random(int, int);
