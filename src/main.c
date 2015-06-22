@@ -6,11 +6,16 @@
 
 int main(void)
 {
-  t_quote *quote;
+  t_quote	quote;
+  int		size, selected;
 
   srand(time(NULL) * getpid());
 
-  quote = &got_quotes[get_random(0, GOT_QUOTES_SIZE - 1)];
-  printf("%s\n~%s\n", quote->quote, quote->author);
+  size = (int)(sizeof(got_quotes) / sizeof(got_quotes[0]));
+  selected = get_random(0, size);
+
+  printf("Quote %d/%d:\n", selected + 1, size);
+  quote = got_quotes[selected];
+  printf("%s\n~%s\n", quote.quote, quote.author);
   return (0);
 }
