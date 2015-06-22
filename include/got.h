@@ -6,8 +6,6 @@ typedef struct s_quote {
   char *quote;
 }t_quote;
 
-# define GOT_QUOTES_SIZE 15
-
 t_quote got_quotes[] = {
   {"Ygritte", "You know nothing, Jon Snow."},
   {"Jaime Lannister", "Give my regards to the Night’s Watch. I’m sure it will be thrilling. And if it’s not, it’s only for life."},
