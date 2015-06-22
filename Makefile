@@ -15,7 +15,9 @@ MANNAME=got.1
 MAN=	man/$(MANNAME)
 
 SRC=	$(SRCDIR)main.c \
-	$(SRCDIR)rand_utils.c
+	$(SRCDIR)rand_utils.c \
+	$(SRCDIR)options_utils.c \
+	$(SRCDIR)quoter.c
 
 OBJ=	$(SRC:.c=.o)
 
