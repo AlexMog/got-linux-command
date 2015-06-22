@@ -29,7 +29,10 @@ LDFLAGS=-o $(NAME)
 
 CP=	cp
 
+MKDIR=	mkdir -p
+
 $(NAME):$(OBJ)
+	$(MKDIR) bin
 	$(CC) $(OBJ) $(LDFLAGS)
 
 all:	$(NAME)
@@ -48,6 +51,8 @@ install:all
 	install -m 644 $(MAN) $(PREFIX)/man/man1
 
 package:all
+	$(MKDIR) $(PKGDIR)$(PREFIX)/games/
+	$(MKDIR) $(PKGDIR)$(PREFIX)/man/man1/
 	$(CP) $(NAME) $(PKGDIR)$(PREFIX)/games/
 	$(CP) $(MAN) $(PKGDIR)$(PREFIX)/man/man1/
 	dpkg-deb --build packaging
